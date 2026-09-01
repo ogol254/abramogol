@@ -1,0 +1,10 @@
+{
+  "name": "Abraham Ogol — Engineer, AI & Technology Leader",
+  "short_name": "Abraham Ogol",
+  "description": "Hands-on engineer and technology leader building enterprise and AI systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#091018",
+  "theme_color": "#091018",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

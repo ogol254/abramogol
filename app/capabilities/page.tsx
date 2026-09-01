@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { PageHero } from '@/components/page-hero';
-export const metadata = { title: 'Capabilities' };
+export const metadata = { title: 'Capabilities', description: 'Technology strategy, enterprise architecture, product engineering, cloud platforms, secure delivery, IoT, connectivity and AI engineering.' };
 const groups = [
   [
     'Leadership',

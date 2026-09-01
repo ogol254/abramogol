@@ -1,7 +1,7 @@
 import { PageHero } from '@/components/page-hero';
 import { roles } from '@/lib/content';
 import { Reveal } from '@/components/reveal';
-export const metadata = { title: 'Experience' };
+export const metadata = { title: 'Experience', description: 'A career across software engineering, IoT and platform delivery, enterprise architecture, product leadership and executive technology direction.' };
 export default function Experience() {
   return (
     <main id="main">

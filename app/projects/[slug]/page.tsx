@@ -3,11 +3,28 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { projects } from '@/lib/content';
+import type { Metadata } from 'next';
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 export const dynamicParams = false;
 export const dynamic = 'force-static';
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const project = projects.find((x) => x.slug === params.slug);
+  if (!project) return { title: 'Case study not found' };
+  return {
+    title: project.title,
+    description: project.summary,
+    alternates: { canonical: `https://ogol254.github.io/projects/${project.slug}/` },
+    openGraph: {
+      title: `${project.title} — Abraham Ogol`,
+      description: project.summary,
+      type: 'article',
+      url: `https://ogol254.github.io/projects/${project.slug}/`,
+      images: [{ url: project.image, alt: `Conceptual visual for ${project.title}` }],
+    },
+  };
+}
 export default function Project({
   params,
 }: {

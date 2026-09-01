@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { ArrowUpRight, LinkIcon, Mail } from 'lucide-react';
 import { PageHero } from '@/components/page-hero';
 
+export const metadata = { title: 'Contact', description: 'Start a conversation with Abraham Ogol about executive technology roles, product leadership, AI, digital transformation or strategic partnerships.' };
+
 export default function Contact() {
   const [topic, setTopic] = useState('Executive technology role');
   return (

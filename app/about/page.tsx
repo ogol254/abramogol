@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { PageHero } from '@/components/page-hero';
 import { Reveal } from '@/components/reveal';
-export const metadata = { title: 'Profile' };
+export const metadata = { title: 'Profile', description: 'Meet Abraham Ogol: a hands-on engineer and technology leader who turns business ambition into resilient products, platforms and teams.' };
 export default function About() {
   return (
     <main id="main">

@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { PageHero } from '@/components/page-hero';
 import { projects } from '@/lib/content';
 import { Reveal } from '@/components/reveal';
-export const metadata = { title: 'Selected Work' };
+export const metadata = { title: 'Selected Work', description: 'Evidence-supported case studies in connectivity, enterprise platforms, IoT, SD-WAN and AI-enabled engineering.' };
 export default function Projects() {
   return (
     <main id="main">

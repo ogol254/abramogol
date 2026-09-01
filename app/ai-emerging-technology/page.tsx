@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { PageHero } from '@/components/page-hero';
 import { Reveal } from '@/components/reveal';
 
-export const metadata = { title: 'AI & Emerging Technology' };
+export const metadata = { title: 'AI & Emerging Technology', description: 'Applied AI practice spanning model adaptation, distillation, developer agents, autonomous systems and responsible financial decision models.' };
 
 const practices = [
   [

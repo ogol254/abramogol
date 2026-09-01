@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowDownToLine, ArrowUpRight } from 'lucide-react';
 import { PageHero } from '@/components/page-hero';
-export const metadata = { title: 'Résumé' };
+export const metadata = { title: 'Résumé', description: 'Download Abraham Ogol’s approved public résumé covering AI, data transformation and enterprise technology leadership.' };
 export default function Resume() {
   return (
     <main id="main">
