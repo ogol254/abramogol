@@ -1,4 +1,4 @@
-import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, extname } from 'node:path';
 
 const root = 'dist/client';
@@ -12,11 +12,29 @@ async function walk(dir) {
     else if (textExtensions.has(extname(entry.name))) {
       const source = await readFile(path, 'utf8');
       // Rewrite only root-relative URLs. Protocol-relative and absolute URLs stay intact.
-      const updated = source.replace(/(["'=:(])\/(?!\/|abramogol\/)/g, '$1/abramogol/');
+      let updated = source.replace(/(["'=:(])\/(?!\/|abramogol\/)/g, '$1/abramogol/');
+      updated = updated.replace(
+        /href="(\/abramogol\/(?:about|experience|projects(?:\/[^"#?]+)?|ai-emerging-technology|capabilities|resume|contact))(?=["#?])/g,
+        'href="$1/',
+      );
       if (updated !== source) await writeFile(path, updated);
     }
   }
 }
 
 await walk(root);
+for (const entry of await readdir(root, { withFileTypes: true })) {
+  if (entry.isFile() && entry.name.endsWith('.html') && entry.name !== 'index.html') {
+    const route = entry.name.slice(0, -'.html'.length);
+    await mkdir(join(root, route), { recursive: true });
+    await cp(join(root, entry.name), join(root, route, 'index.html'));
+  }
+}
+for (const entry of await readdir(join(root, 'projects'), { withFileTypes: true })) {
+  if (entry.isFile() && entry.name.endsWith('.html') && entry.name !== 'index.html') {
+    const route = entry.name.slice(0, -'.html'.length);
+    await mkdir(join(root, 'projects', route), { recursive: true });
+    await cp(join(root, 'projects', entry.name), join(root, 'projects', route, 'index.html'));
+  }
+}
 await writeFile(join(root, '.nojekyll'), '');
