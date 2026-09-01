@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { projects } from '@/lib/content';
@@ -37,9 +36,9 @@ export default function Project({
   return (
     <main id="main">
       <section className="case-hero">
-        <Link className="text-link" href="/projects">
+        <a className="text-link" href="/projects">
           <ArrowLeft size={15} /> All selected work
-        </Link>
+        </a>
         <p className="eyebrow">
           Case study {p.number} / {p.discipline}
         </p>
@@ -112,10 +111,10 @@ export default function Project({
       </section>
       <section className="next-project">
         <p className="eyebrow">Next case study</p>
-        <Link href={`/projects/${next.slug}`}>
+        <a href={`/projects/${next.slug}`}>
           <span>{next.title}</span>
           <ArrowUpRight />
-        </Link>
+        </a>
       </section>
     </main>
   );

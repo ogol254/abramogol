@@ -43,3 +43,5 @@ next-env.d.ts
 /newp.pdf
 /portfolio-work/
 /sadsdsa.md
+.playwright/
+test-results/

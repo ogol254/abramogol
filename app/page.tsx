@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { SceneLoader } from '@/components/scene-loader';
@@ -19,12 +18,12 @@ export default function Home() {
               deploy and support them—and lead the teams behind everything.
             </p>
             <div className="hero-actions">
-              <Link className="button gold" href="/projects">
+              <a className="button gold" href="/projects">
                 Explore selected work <ArrowRight size={17} />
-              </Link>
-              <Link className="text-link" href="/about">
+              </a>
+              <a className="text-link" href="/about">
                 Leadership profile <ArrowUpRight size={15} />
-              </Link>
+              </a>
             </div>
           </Reveal>
         </div>
@@ -78,9 +77,9 @@ export default function Home() {
             releases, supporting operations and developing the people who
             deliver it.
           </p>
-          <Link className="text-link" href="/experience">
+          <a className="text-link" href="/experience">
             Trace the journey <ArrowUpRight size={15} />
-          </Link>
+          </a>
         </Reveal>
       </section>
       <section className="selected">
@@ -89,14 +88,14 @@ export default function Home() {
             <p className="eyebrow">Selected work / 01—04</p>
             <h2>Platforms built for movement, scale and control.</h2>
           </div>
-          <Link className="text-link" href="/projects">
+          <a className="text-link" href="/projects">
             All projects <ArrowUpRight size={15} />
-          </Link>
+          </a>
         </div>
         <div className="project-feature-grid">
           {projects.slice(0, 3).map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.08}>
-              <Link className="project-card" href={`/projects/${p.slug}`}>
+              <a className="project-card" href={`/projects/${p.slug}`}>
                 <figure>
                   <Image
                     src={p.image}
@@ -111,7 +110,7 @@ export default function Home() {
                 <small>
                   {p.organisation} · {p.period}
                 </small>
-              </Link>
+              </a>
             </Reveal>
           ))}
         </div>

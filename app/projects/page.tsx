@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { PageHero } from '@/components/page-hero';
@@ -17,7 +16,7 @@ export default function Projects() {
       <section className="project-index">
         {projects.map((p) => (
           <Reveal key={p.slug}>
-            <Link href={`/projects/${p.slug}`} className="project-row">
+            <a href={`/projects/${p.slug}`} className="project-row">
               <figure>
                 <Image
                   src={p.image}
@@ -42,7 +41,7 @@ export default function Projects() {
                 <br />
                 {p.period}
               </em>
-            </Link>
+            </a>
           </Reveal>
         ))}
       </section>

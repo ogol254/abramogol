@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
@@ -16,27 +15,27 @@ export function Header() {
   const close = () => setOpen(false);
   return (
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
-      <Link className="brand" href="/" aria-label="Abraham Ogol home">
+      <a className="brand" href="/" aria-label="Abraham Ogol home">
         <b>AO</b>
         <span>
           Abraham Ogol<small>Engineer · AI & technology leader</small>
         </span>
-      </Link>
+      </a>
       <nav className="desktop-nav" aria-label="Primary">
         {nav.map((n, i) => (
-          <Link
+          <a
             key={n.href}
             className={path.startsWith(n.href) ? 'active' : ''}
             href={n.href}
           >
             <i>0{i + 1}</i>
             {n.label}
-          </Link>
+          </a>
         ))}
       </nav>
-      <Link className="header-cta" href="/contact">
+      <a className="header-cta" href="/contact">
         Start a conversation <ArrowUpRight size={15} />
-      </Link>
+      </a>
       <button
         className="menu-button"
         aria-label={open ? 'Close menu' : 'Open menu'}
@@ -48,17 +47,17 @@ export function Header() {
       <div className={`mobile-nav ${open ? 'open' : ''}`}>
         <p>Navigate</p>
         {nav.map((n, i) => (
-          <Link onClick={close} key={n.href} href={n.href}>
+          <a onClick={close} key={n.href} href={n.href}>
             <span>0{i + 1}</span>
             {n.label}
-          </Link>
+          </a>
         ))}
-        <Link onClick={close} href="/resume">
+        <a onClick={close} href="/resume">
           <span>06</span>Résumé
-        </Link>
-        <Link onClick={close} href="/contact">
+        </a>
+        <a onClick={close} href="/contact">
           <span>07</span>Contact
-        </Link>
+        </a>
       </div>
     </header>
   );

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { ArrowDownToLine, ArrowUpRight } from 'lucide-react';
 import { PageHero } from '@/components/page-hero';
 export const metadata = { title: 'Résumé', description: 'Download Abraham Ogol’s approved public résumé covering AI, data transformation and enterprise technology leadership.' };
@@ -36,9 +35,9 @@ export default function Resume() {
           <p className="eyebrow">Prefer a conversation?</p>
           <h2>Discuss the role, platform or transformation ahead.</h2>
         </div>
-        <Link className="button gold" href="/contact">
+        <a className="button gold" href="/contact">
           Contact Abraham <ArrowUpRight size={16} />
-        </Link>
+        </a>
       </section>
     </main>
   );

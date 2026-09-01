@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { PageHero } from '@/components/page-hero';
 import { Reveal } from '@/components/reveal';
@@ -69,9 +68,9 @@ export default function About() {
       <section className="page-cta">
         <p className="eyebrow">Continue the story</p>
         <h2>See how the work evolved.</h2>
-        <Link className="button gold" href="/experience">
+        <a className="button gold" href="/experience">
           Experience <ArrowUpRight size={16} />
-        </Link>
+        </a>
       </section>
     </main>
   );

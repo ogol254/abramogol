@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 export function Footer() {
   return (
@@ -10,16 +9,16 @@ export function Footer() {
           <br />
           <em>move.</em>
         </h2>
-        <Link className="button gold" href="/contact">
+        <a className="button gold" href="/contact">
           Start a conversation <ArrowUpRight size={17} />
-        </Link>
+        </a>
       </div>
       <div className="footer-links">
         <div>
           <b>Explore</b>
-          <Link href="/about">Profile</Link>
-          <Link href="/experience">Experience</Link>
-          <Link href="/projects">Selected work</Link>
+          <a href="/about">Profile</a>
+          <a href="/experience">Experience</a>
+          <a href="/projects">Selected work</a>
         </div>
         <div>
           <b>Connect</b>
@@ -31,7 +30,7 @@ export function Footer() {
             LinkedIn
           </a>
           <a href="mailto:abramogol@gmail.com">abramogol@gmail.com</a>
-          <Link href="/resume">Résumé</Link>
+          <a href="/resume">Résumé</a>
         </div>
       </div>
       <div className="footer-bottom">

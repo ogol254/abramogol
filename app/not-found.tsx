@@ -1,4 +1,3 @@
-import Link from 'next/link';
 export default function NotFound() {
   return (
     <main id="main" className="not-found">
@@ -10,12 +9,12 @@ export default function NotFound() {
         selected work.
       </p>
       <div>
-        <Link className="button gold" href="/">
+        <a className="button gold" href="/">
           Return home
-        </Link>
-        <Link className="text-link" href="/projects">
+        </a>
+        <a className="text-link" href="/projects">
           Selected work
-        </Link>
+        </a>
       </div>
     </main>
   );
