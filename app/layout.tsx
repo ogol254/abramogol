@@ -3,7 +3,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import './globals.css';
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ogol254.github.io/abramogol/'),
+  metadataBase: new URL('https://ogol254.github.io/'),
   title: {
     default: 'Abraham Ogol — Engineer, AI & Technology Leader',
     template: '%s — Abraham Ogol',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Abraham Ogol — Engineer, AI & Technology Leader',
     description: 'I do not just lead technology. I build it.',
     type: 'website',
-    url: 'https://ogol254.github.io/abramogol/',
+    url: 'https://ogol254.github.io/',
   },
   twitter: {
     card: 'summary_large_image',

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { projects } from '@/lib/content';
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://ogol254.github.io/abramogol';
+  const base = 'https://ogol254.github.io';
   const routes = [
     '',
     '/about',

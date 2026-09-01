@@ -11,13 +11,12 @@ async function walk(dir) {
     if (entry.isDirectory()) await walk(path);
     else if (textExtensions.has(extname(entry.name))) {
       const source = await readFile(path, 'utf8');
-      // Rewrite only root-relative URLs. Protocol-relative and absolute URLs stay intact.
-      let updated = source.replace(/(["'=:(])\/(?!\/|abramogol\/)/g, '$1/abramogol/');
-      updated = updated.replace(
-        /href="(\/abramogol\/(?:about|experience|projects(?:\/[^"#?]+)?|ai-emerging-technology|capabilities|resume|contact))(?=["#?])/g,
-        'href="$1/',
-      );
-      if (updated !== source) await writeFile(path, updated);
+      // Root Pages deployment: preserve root-relative asset and route URLs.
+      // Protocol-relative and absolute URLs remain untouched.
+      if (source.includes('/abramogol/')) {
+        const updated = source.replaceAll('/abramogol/', '/');
+        if (updated !== source) await writeFile(path, updated);
+      }
     }
   }
 }
