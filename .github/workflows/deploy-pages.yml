@@ -28,9 +28,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build static site
-        env:
-          NEXT_PUBLIC_BASE_PATH: /abramogol
         run: npm run build
+      - name: Prepare project Pages paths
+        run: node scripts/prepare-pages.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

@@ -6,12 +6,14 @@ import { projects } from '@/lib/content';
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
-export default async function Project({
+export const dynamicParams = false;
+export const dynamic = 'force-static';
+export default function Project({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const { slug } = await params;
+  const { slug } = params;
   const p = projects.find((x) => x.slug === slug);
   if (!p) notFound();
   const next = projects[(projects.indexOf(p) + 1) % projects.length];
