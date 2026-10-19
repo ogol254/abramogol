@@ -29,6 +29,9 @@ export default function Resume() {
         <a className="button gold" href="/resume/Abraham_Ogol-AAR-AI-Data-Transformations-Lead.pdf" download>
           <ArrowDownToLine size={17} /> Download public résumé
         </a>
+        <a className="button gold" href="/resume/abraham-ogol-resume-39.pdf" download>
+          <ArrowDownToLine size={17} /> Download latest résumé
+        </a>
       </section>
       <section className="resume-prompt">
         <div>
